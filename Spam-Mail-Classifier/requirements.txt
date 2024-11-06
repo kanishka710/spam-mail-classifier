@@ -1,0 +1,4 @@
+sckikit-learn
+flask
+flask_sqlalchemy
+flask_bcrypt
