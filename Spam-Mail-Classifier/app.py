@@ -15,8 +15,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
-model = pickle.load(open(r'Spam-Mail-Classifier\classifer.pkl', 'rb'))
-vectorizer = pickle.load(open(r'Spam-Mail-Classifier\vectorizer.pkl', 'rb'))  
+model = pickle.load(open(r'Spam-Mail-Classifier/classifer.pkl', 'rb'))
+vectorizer = pickle.load(open(r'Spam-Mail-Classifier/vectorizer.pkl', 'rb'))  
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
