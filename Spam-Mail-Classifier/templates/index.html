@@ -1,0 +1,36 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Mail Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="form-wrapper">
+            <form action="/predict" method="POST" class="mt-4">
+                <h1 class="mt-5">Spam Mail Classifier</h1>
+                <div class="main-form-group">
+                    <label for="email_text">Enter Email Text:</label>
+                    <textarea class="form-control" id="email_text" name="email_text" required autofocus></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Predict</button>
+                {% if prediction_text %}
+                <div class="alert alert-info mt-4">
+                    <strong>Prediction:</strong> {{ prediction_text }}
+                </div>
+                {% endif %}
+                <div class="register-login-link">
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger mt-4">Logout</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</html>

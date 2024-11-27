@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Spam Mail Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <form action="/login" method="POST" class="mt-4">
+                <h1 class="mt-5">Login</h1>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="register-login-link">
+                    <p class="mt-4">Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+                    <!-- {% if error %}
+                    <div class="alert alert-danger mt-4">
+                        <strong>Error:</strong> {{ error }}
+                    </div>
+                    {% endif %} -->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
